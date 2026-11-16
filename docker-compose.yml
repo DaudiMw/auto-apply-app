@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    container_name: auto_apply_web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8501:8501"
+    env_file:
+      - .env
+    environment:
+      - DYNAMODB_TABLE_NAME=auto_apply_users
+      - AWS_DEFAULT_REGION=us-east-1

@@ -83,7 +83,7 @@ class EducationFormData(BaseModel):
     degree_field: Annotated[Optional[str], Field(title="Field of Study")] = None 
     description: Annotated[Optional[str], Field(title="Description", json_schema_extra={"widget":"textarea"})] = None 
     start_date: Annotated[Optional[date], Field(title="Start Date")] = None
-    end_date: Annotated[Optional[date], Field(title="Start Date")] = None
+    end_date: Annotated[Optional[date], Field(title="End Date")] = None
 
 
 class Experience(BaseModel):
@@ -134,7 +134,7 @@ class Project(BaseModel):
 
 class ProjectFormData(BaseModel):
     project_name: Annotated[Optional[str], Field(title="Project Name")] = None
-    project_link: Annotated[Optional[HttpUrl], Field(title="Link to Project")] = None
+    project_link: Annotated[Optional[str], Field(title="Link to Project")] = None
     description: Annotated[Optional[str], Field(title="Description", json_schema_extra={"widget":"textarea"})] = None
     start_date: Annotated[Optional[date], Field(title="Date")] = None
 
